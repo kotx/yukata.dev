@@ -1,0 +1,60 @@
+---
+import Header from "../components/Header.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  siteName?: string;
+  backLink?: string;
+
+  frontmatter?: Props;
+}
+
+const { title, description, siteName, backLink }: Props =
+  Astro.props.frontmatter || Astro.props;
+
+import "@fontsource-variable/hanken-grotesk";
+import "../scss/base.scss";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title || "yukata.dev"}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="me" href="https://uwu.social/@kot" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.site} />
+
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+
+    <meta itemprop="name" content={title} />
+    <meta itemprop="description" content={description} />
+    <meta name="description" content={description} />
+
+    <meta name="theme-color" content="#99DDFF" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body>
+    <article>
+      {
+        title && (
+          // Don't show description from frontmatter of non-blog pages (TODO: make this less hacky)
+          <Header title={title} description={Astro.props.description} backLink={backLink} />
+        )
+      }
+
+      <main>
+        <slot />
+      </main>
+    </article>
+  </body>
+</html>

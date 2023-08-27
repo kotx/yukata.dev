@@ -1,0 +1,21 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  backLink?: string;
+}
+
+const { title, description, backLink } = Astro.props;
+---
+
+<header>
+  {
+    backLink && (
+      <span>
+        <a href={backLink}>← back to {backLink}</a>
+      </span>
+    )
+  }
+  <h1>{title}</h1>
+  {description && <p>{description}</p>}
+</header>

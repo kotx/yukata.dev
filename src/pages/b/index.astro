@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getCollection("blog");
+---
+
+<style lang="scss">
+  li {
+    p.flex {
+      display: inline-flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      list-style: circle;
+    }
+  }
+</style>
+
+<BaseLayout
+  title="Kot's Blog"
+  description="Hello! This is my blog, where I write about things I've done!"
+  backLink="/"
+>
+  <ul>
+    {posts.length ? 
+      posts.map((post) => (
+        <li>
+          <p class="flex">
+            <span>
+              <a href={post.slug}>{post.data.title}</a>
+            </span>
+            <span>&mdash;</span>
+            <span>{post.data.description}</span>
+          </p>
+        </li>
+      )) : <p>Nothing here yet!</p>
+    }
+  </ul>
+</BaseLayout>

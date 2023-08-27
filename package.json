@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write . --ignore-path=.gitignore --plugin=prettier-plugin-astro",
+    "prepare": "astro sync"
+  },
+  "dependencies": {
+    "@fontsource-variable/hanken-grotesk": "^5.0.9",
+    "astro": "^2.10.14",
+    "sass": "^1.66.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.2",
+    "prettier-plugin-astro": "^0.12.0"
+  }
+}
