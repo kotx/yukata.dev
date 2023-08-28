@@ -10,7 +10,6 @@ article {
   }
 
   h1 {
-    margin-bottom: 1rem;
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
@@ -65,6 +64,11 @@ article {
   pre,
   code {
     border-radius: 4px;
-    padding: 0.25rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
+    span.line {
+      padding: 0.4rem;
+    }
   }
 }

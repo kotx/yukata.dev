@@ -15,13 +15,40 @@ export interface Props {
 }
 
 const { post }: Props = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
+
+<style lang="scss">
+  @use "../../scss/variables" as *;
+
+  nav {
+    border: 1px solid $border-color;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: inline-block;
+
+    ol {
+      list-style-position: inside;
+    }
+  }
+</style>
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
   backLink="/b"
 >
+  <nav slot="sidebar">
+    <ol style="list-style: none">
+      {
+        headings.map((heading) => (
+          <li style={`margin-left: ${(heading.depth-1)}ch`}>
+            <a href={"#" + heading.slug}>{heading.text}</a>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+
   <Content />
 </BaseLayout>

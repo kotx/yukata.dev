@@ -22,18 +22,22 @@ const posts = await getCollection("blog");
   backLink="/"
 >
   <ul>
-    {posts.length ? 
-      posts.map((post) => (
-        <li>
-          <p class="flex">
-            <span>
-              <a href={post.slug}>{post.data.title}</a>
-            </span>
-            <span>&mdash;</span>
-            <span>{post.data.description}</span>
-          </p>
-        </li>
-      )) : <p>Nothing here yet!</p>
+    {
+      posts.length ? (
+        posts.map((post) => (
+          <li>
+            <p class="flex">
+              <span>
+                <a href={post.slug}>{post.data.title}</a>
+              </span>
+              <span>&mdash;</span>
+              <span>{post.data.description}</span>
+            </p>
+          </li>
+        ))
+      ) : (
+        <p>Nothing here yet!</p>
+      )
     }
   </ul>
 </BaseLayout>
