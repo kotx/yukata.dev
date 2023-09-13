@@ -27,3 +27,4 @@ And finally, thanks to these amazing people for [sponsoring me](https://github.c
 - [auravoid](https://auravoid.dev)
 - [Zeryther](https://zeryther.com)
 - [wildesPepega](https://github.com/wildesPepega)
+- [Spotlight](https://github.com/spotlightishere)!
