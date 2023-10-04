@@ -15,7 +15,7 @@ Here's a list:
 - [shovel](https://github.com/kotx/shovel), a client for placing lots of pixels on [Place IPv6](https://v6.sys42.net/).
 - [recorder](https://github.com/kotx/recorder), a Rust crate to simplify data struct creation.
 - [this website](https://github.com/kotx/yukata.dev)
-- and [more here](https://github.com/kotx?tab=repositories&q=&type=source).
+- and [more on my github](https://github.com/kotx?tab=repositories&q=&type=source).
 
 You can also check out [my blog](/b) for a sneak-peek into what I've been up to recently.
 
