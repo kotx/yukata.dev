@@ -19,7 +19,7 @@ Here's a list:
 
 You can also check out [my blog](/b) for a sneak-peek into what I've been up to recently.
 
-And finally, thanks to these amazing people for [sponsoring me](https://github.com/sponsors/kotx):
+And finally, thanks to these amazing people (and organizations) for [sponsoring me](https://github.com/sponsors/kotx):
 
 - [Erisa](https://erisa.uk)
 - [FloatingMilkshake](https://floatingmilkshake.com)
@@ -27,4 +27,5 @@ And finally, thanks to these amazing people for [sponsoring me](https://github.c
 - [auravoid](https://auravoid.dev)
 - [Zeryther](https://zeryther.com)
 - [wildesPepega](https://github.com/wildesPepega)
-- [Spotlight](https://github.com/spotlightishere)!
+- [Spotlight](https://github.com/spotlightishere)
+- [Arhan Chaudhary](https://github.com/arhanchaudhary)!
