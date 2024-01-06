@@ -10,7 +10,6 @@
     "prepare": "astro sync"
   },
   "dependencies": {
-    "@fontsource-variable/hanken-grotesk": "^5.0.19",
     "astro": "^4.1.1",
     "sass": "^1.69.7"
   },

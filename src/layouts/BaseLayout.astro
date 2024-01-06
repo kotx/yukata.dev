@@ -13,7 +13,6 @@ export interface Props {
 const { title, description, siteName, backLink }: Props =
   Astro.props.frontmatter || Astro.props;
 
-import "@fontsource-variable/hanken-grotesk";
 import "../scss/base.scss";
 ---
 
@@ -42,6 +41,10 @@ import "../scss/base.scss";
 
     <meta name="theme-color" content="#99DDFF" />
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
