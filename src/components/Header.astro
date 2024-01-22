@@ -1,21 +1,36 @@
----
-export interface Props {
-  title: string;
-  description?: string;
-  backLink?: string;
-}
+<h1><slot /></h1>
 
-const { title, description, backLink } = Astro.props;
----
-
-<header>
-  {
-    backLink && (
-      <span>
-        <a href={backLink}>← back to {backLink}</a>
-      </span>
-    )
+<style lang="scss">
+  /* Font by drawperfect.com */
+  @font-face {
+    font-family: "FORCED SQUARE";
+    src:
+      local("FORCED SQUARE"),
+      url("/fonts/FORCED_SQUARE.woff2") format("woff2"),
+      url("/fonts/FORCED_SQUARE.woff") format("woff"),
+      url("/fonts/FORCED_SQUARE.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
   }
-  <h1>{title}</h1>
-  {description && <p>{description}</p>}
-</header>
+
+  $kot-gradient: linear-gradient(
+    to top right,
+    hsl(274, 92%, 62%) 0 50%,
+    hsl(322, 100%, 50%) 100%
+  );
+
+  h1 {
+    font-family: "FORCED SQUARE", "Consolas", "Lucida Console", "Monaco",
+      ui-monospace, monospace, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2em;
+
+    display: inline;
+    color: #ffffff;
+    background: $kot-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

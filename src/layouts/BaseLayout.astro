@@ -49,19 +49,7 @@ import "../scss/base.scss";
 
   <body>
     <article>
-      {
-        title && (
-          // Don't show description from frontmatter of non-blog pages (TODO: make this less hacky)
-          <Header
-            title={title}
-            description={Astro.props.description}
-            backLink={backLink}
-          />
-        )
-      }
-
-      <slot name="sidebar" />
-
+      <Header>{title}</Header>
       <main>
         <slot />
       </main>

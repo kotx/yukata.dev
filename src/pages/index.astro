@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import sponsors from "../data/sponsors.json";
+---
+
+<BaseLayout title="Kot" description="Heyo, I'm Kot! Nice to meet you.">
+  <p>
+    Hey, I'm Kot! I'm a comp sci student at the [University of
+    Wisconsin](https://wisc.edu).
+  </p>
+
+  Here's a few things I've made:
+
+  <ul>
+    <li>
+      <a href="https://github.com/kotx/render">render</a>, a spec-compliant
+      Cloudflare Worker to serve objects from a Cloudflare R2 storage bucket.
+    </li>
+    <li>
+      <a href="https://github.com/kotx/aster">aster</a>, another Cloudflare
+      Worker that allows you to reliably upload objects to Cloudflare R2.
+    </li>
+    <li>
+      <a href="https://github.com/kotx/laplace">laplace</a>, a program to use a
+      Raspberry Pi Pico microcontroller for Wii U emulator motion controls!
+    </li>
+    <li><a href="https://github.com/kotx/yukata.dev">this website</a>!</li>
+  </ul>
+
+  <p>
+    And finally, thanks to these amazing people (and organizations) for <a
+      href="https://github.com/sponsors/kotx">sponsoring me</a
+    >:
+    <ul>
+      {
+        sponsors.map((sp: { url: string; name: string }) => (
+          <li>
+            <a href={sp.url}>{sp.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </p>
+</BaseLayout>
