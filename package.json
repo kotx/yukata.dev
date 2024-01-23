@@ -16,5 +16,6 @@
 		"prettier": "^3.2.4",
 		"sass": "^1.57.1",
 		"wrangler": "^3.23.0"
-	}
+	},
+	"packageManager": "yarn@3.6.3"
 }
