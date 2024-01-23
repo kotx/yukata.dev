@@ -1,6 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true
-  }
+	"extends": "astro/tsconfigs/strictest",
 }

@@ -1,8 +1,0 @@
-$site-color: #ff66ff;
-$bg-color: adjust-color(
-  $site-color,
-  $hue: +30,
-  $saturation: -90%,
-  $lightness: -75%
-);
-$border-color: hsl(0, 0%, 30%);

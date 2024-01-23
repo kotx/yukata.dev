@@ -2,62 +2,131 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-export interface Props {
-  title?: string;
-  description?: string;
-  siteName?: string;
-
-  frontmatter?: Props;
+interface Props {
+	title?: string;
+	description?: string;
+	siteName?: string;
 }
 
-const { title, description, siteName }: Props =
-  Astro.props.frontmatter || Astro.props;
-
-import "../scss/base.scss";
+const {
+	title = "Kot!!",
+	description = "Hey, I'm Kot! Nice to meet you.",
+	siteName = "Kot's Website",
+} = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>{title || "yukata.dev"}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="me" href="https://uwu.social/@kot" />
-    <link rel="me" href="https://awau.social/@kot" />
+	<head>
+		<meta charset="UTF-8" />
+		<title>{title || "yukata.dev"}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="me" href="https://uwu.social/@kot" />
+		<link rel="me" href="https://awau.social/@kot" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content="en" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.site} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:locale" content="en" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={Astro.site} />
 
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:card" content="summary" />
 
-    <meta itemprop="name" content={title} />
-    <meta itemprop="description" content={description} />
-    <meta name="description" content={description} />
+		<meta itemprop="name" content={title} />
+		<meta itemprop="description" content={description} />
+		<meta name="description" content={description} />
 
-    <meta name="theme-color" content="#ff66ff" />
-    <meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#ff66ff" />
+		<meta name="generator" content={Astro.generator} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 
-  <body>
-    <article>
-      <Header>{title}</Header>
-      <main>
-        <slot />
-      </main>
-    </article>
+	<body>
+		<main>
+			<Header>{title}</Header>
+			<slot />
+			<Footer />
+		</main>
+		<style lang="scss" is:global>
+			$site-color: #ff66ff;
+			$bg-gradient: linear-gradient(
+				to top right,
+				hsl(274, 85%, 43%),
+				hsl(322, 100%, 50%)
+			);
 
-    <Footer />
-  </body>
+			@mixin for-wide-only {
+				@media only screen and (min-width: 768px) {
+					@content;
+				}
+			}
+
+			body {
+				font-family: "Consolas", "Lucida Console", "Monaco",
+					ui-monospace, monospace, "Apple Color Emoji",
+					"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+					system-ui, sans-serif;
+				font-size: 20px;
+
+				box-sizing: border-box;
+				height: 100vh;
+
+				padding: 0.75rem;
+				margin: 0;
+
+				background-color: black;
+
+				@include for-wide-only {
+					background: $bg-gradient;
+					background-repeat: no-repeat;
+				}
+			}
+
+			main {
+				background-color: black;
+
+				box-sizing: border-box;
+				& * {
+					box-sizing: border-box;
+				}
+
+				color: white;
+				min-height: 100%;
+
+				padding: 2%;
+
+				position: relative;
+				overflow-wrap: break-word;
+
+				@include for-wide-only {
+					margin: 0 15%;
+				}
+
+				a {
+					color: $site-color;
+				}
+
+				ul {
+					margin: 0;
+				}
+
+				li {
+					margin: 8px 0;
+				}
+
+				p {
+					margin: 18px 0;
+				}
+			}
+		</style>
+	</body>
 </html>
